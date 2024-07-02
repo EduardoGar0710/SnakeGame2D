@@ -2,11 +2,13 @@
 #include <SFML/Graphics.hpp>
 #include <random>
 #include <ctime>
+#include <Sounds.hpp>
 
 class Food
 {
 private:
     sf::Texture mapa;
+    Sounds sound;
 
 public:
     sf::Sprite food;

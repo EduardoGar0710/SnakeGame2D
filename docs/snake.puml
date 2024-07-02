@@ -6,16 +6,34 @@ class Mapa
 class Food
 Class Score
 class Walls
-class Efectos
+class Sounds
 
-Juego "1" --* "1" Jugador
-Jugador --|> Snake
 
-Juego --* Mapa
-Mapa --* Walls
-Mapa --* Food
-Mapa --o Efectos
+Metaclass draw
 
-Snake --o Score
+Juego "1" *-- "1" Jugador
+Jugador <|--Snake
+
+
+
+
+Juego *-- Mapa
+Mapa *-- Walls
+Mapa o-- draw
+
+Snake o-- Score
+
+Food o-- Sounds
+
+
+class Perro
+class Juguete
+class Corazon
+class Animal
+
+Perro --|> Animal
+Perro o-- Juguete
+Perro *-- Corazon
+
 
 @enduml

@@ -1,7 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <Walls.hpp>
+#include <Wall.hpp>
 #include <Food.hpp>
+
 
 class Mapa
 {
@@ -11,8 +12,10 @@ private:
     sf::Texture mapa;
     Walls walls;
 
+
+
 public:
-public:
+
     Mapa(sf::Vector2f position, sf::Color color)
     {
         fondo.setSize(sf::Vector2f(640, 499));
