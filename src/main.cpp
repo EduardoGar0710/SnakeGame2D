@@ -102,7 +102,7 @@ int main()
         {
             std::cout << "Colision con  " << std::endl;
             food.food.setPosition(food.getRandomPosition(window, food.objectSize));
-            score++;
+            score= score+10;;
             std::cout << "puntaje: " << score << std::endl;
             sound.sound.play();
             velocidad = velocidad + .1;

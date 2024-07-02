@@ -14,7 +14,7 @@ public:
 
         // Cargar la imagen desde un archivo
 
-        if (!texture.loadFromFile("./assets/images/Snake sprite sheet.png"))
+        if (!texture.loadFromFile("./assets/images/craft.png"))
         {
             throw std::runtime_error("No se cargo la imagen");
         }
@@ -25,26 +25,26 @@ public:
     {
         sprite.move(offsetX, offsetY);
         shape.move(offsetX, offsetY);
-        sprite.setRotation(90);
+        sprite.setRotation(180);
     }
     void moveR(float offsetX, float offsetY)
     {
         sprite.move(offsetX, offsetY);
         shape.move(offsetX, offsetY);
-        sprite.setRotation(270);
+        sprite.setRotation(0);
     }
     void moveU(float offsetX, float offsetY)
     {
         sprite.move(offsetX, offsetY);
         shape.move(offsetX, offsetY);
-        sprite.setRotation(180);
+        sprite.setRotation(270);
     }
     void moveD(float offsetX, float offsetY)
 
     {
         sprite.move(offsetX, offsetY);
         shape.move(offsetX, offsetY);
-        sprite.setRotation(0);
+        sprite.setRotation(90);
     }
     void draw(sf::RenderWindow &window)
     {
@@ -52,7 +52,7 @@ public:
     }
     void Update()
     {
-        sprite.setTextureRect(sf::IntRect(1, 1, 45, 35));
+        sprite.setTextureRect(sf::IntRect(5, 5, 65, 55));
     }
 
     bool DetectarColision(sf::FloatRect colision)
