@@ -1,0 +1,21 @@
+@startuml SnakeGame
+class Juego
+class Jugador 
+class Snake
+class Mapa
+class Food
+Class Score
+class Walls
+class Efectos
+
+Juego "1" --* "1" Jugador
+Jugador --|> Snake
+
+Juego --* Mapa
+Mapa --* Walls
+Mapa --* Food
+Mapa --o Efectos
+
+Snake --o Score
+
+@enduml
