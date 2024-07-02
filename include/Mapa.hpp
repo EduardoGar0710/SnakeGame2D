@@ -3,7 +3,6 @@
 #include <Walls.hpp>
 #include <Food.hpp>
 
-
 class Mapa
 {
 private:
@@ -11,13 +10,8 @@ private:
     sf::Sprite recorte;
     sf::Texture mapa;
     Walls walls;
-     
 
-
-public: 
-
-
-
+public:
 public:
     Mapa(sf::Vector2f position, sf::Color color)
     {
@@ -35,9 +29,9 @@ public:
         this->recorte.setPosition(sf::Vector2f(0.0f, 0.0f));
     }
 
-    void draw(sf::RenderWindow &window){
-    window.draw(this->recorte);
-    walls.draw(window);
+    void draw(sf::RenderWindow &window)
+    {
+        window.draw(this->recorte);
+        walls.draw(window);
     }
 };
- 

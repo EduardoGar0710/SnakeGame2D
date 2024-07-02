@@ -2,19 +2,19 @@
 ![Portada ](https://github.com/EduardoGar0710/SnakeGame2D/assets/162521123/c4d45d71-dd45-4a8f-8ef5-1c38cdcd49cd)
 
 
-Este proyecto es una implementación simple del clásico juego arcade "Arkanoid" utilizando la biblioteca SFML en C++. El juego consiste en controlar una paleta para hacer rebotar una bola y romper bloques. El objetivo es despejar todos los bloques sin dejar que la bola caiga fuera de la pantalla.
+Este proyecto es un juego con inspiracion en el juegp clasico de "Sanke " utilizando la biblioteca SFML en C++. El juego consiste en controlar una serpiente que ira comiendo manzanas que van apareciendo de manera random en la pantalla y al comerlas aumentara nuestro score por cada una que se haya comido
 
 ## Características
 
-- **Mecánicas de la Paleta y la Bola**: Controla una paleta para hacer rebotar una bola, rompiendo bloques al colisionar.
-- **Bloques**: Varias filas de bloques de colores para romper.
-- **Power-Up (Pastilla)**: Ocasionalmente, aparece un power-up que duplica el tamaño de la paleta cuando se recoge.
-- **Efectos de Sonido**: Diferentes sonidos para la colisión bola-pared, bola-paleta y bola-bloque.
-- **Condiciones de Victoria y Derrota**: Gana al despejar todos los bloques y pierde si la bola toca el fondo de la ventana.
+- **Mecánicas de Serpiente**: Controla la serpiente con las flechas del techaldo.
+- **Manzanas**: Se generaran manzanas de manera aleatoria en el mapa.
+- **Avance**: La velocidad se vera aumentada a medida que vamos comiendo manzanas
+- **Efectos de Sonido**: Se escuchara un sonido de colicion al ingerir las manzanas.
+- **Score**: La puntuacion ira aumentando en medida que comemos manzanas.
+- **Condiciones de Victoria y Derrota**: El puntaje aumentara en medida de cuantas manzanas hemos comido pero tambien aumentara la   velocidad de los controles.
 
-![arkanoid 2](https://github.com/RoTtiN2/Arkanoid/assets/160083533/6d284602-8fbd-46cc-af72-9cec77021359)
-![arkanoid 1](https://github.com/RoTtiN2/Arkanoid/assets/160083533/fab76246-9cfe-4e83-aa4c-f801c66ccaf9)
-
+![JuegoSnake1](https://github.com/EduardoGar0710/SnakeGame2D/assets/162521123/f32bd90d-f860-4f2c-ae77-6eaff0eb5812)
+![Juego snake2](https://github.com/EduardoGar0710/SnakeGame2D/assets/162521123/0dfc8af5-8c71-4d58-9634-3dc2d9e58981)
 
 ## Programas Necesarios
 
@@ -67,14 +67,14 @@ Para poder realizar commits desde Visual Studio Code es necesario tener instalad
 1. **Clonar el Repositorio**: Clona este repositorio en tu máquina local.
 
     ```bash
-    git clone https://github.com/yourusername/arcanoid-game.git
+    git clone https://github.com/EduardoGar0710/SnakeGame2D.git
     ```
 
 2. **Compilar el Proyecto**: Navega al directorio del proyecto y compila el proyecto utilizando tu compilador de C++ preferido. Asegúrate de enlazar las bibliotecas SFML.
 
     ```bash
-    cd arcanoid-game
-    g++ -o arcanoid main.cpp -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+    cd SnakeGame2
+    g++ -o SnakeGame2 main.cpp -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
     ```
 
 ## Uso
@@ -85,48 +85,48 @@ Para poder realizar commits desde Visual Studio Code es necesario tener instalad
     ./Main o en visual studio make runMain
     ```
 
-2. **Controlar la Paleta**: Usa las teclas de flecha izquierda y derecha para mover la paleta.
+2. **Controlar Snake**: Usa las flachas del teclado para controlar a Snake.
 
 3. **Jugabilidad**:
-   - Haz rebotar la bola con la paleta para romper los bloques.
-   - Recoge el power-up para agrandar temporalmente la paleta.
-   - Despeja todos los bloques para ganar el juego.
-   - Evita que la bola caiga fuera de la pantalla para no perder el juego.
+   - Moverse por el mapa.
+   - Comer manzanas.
+   - Aumenta tu score.
+   - Evita que chocar con las paredes
 
 ## Estructura del Juego
 
 ### Variables y Estructuras
 
-- **Estructura del Bloque**: Representa cada bloque con un estado y una forma rectangular.
-- **Estructura de la Pastilla**: Representa el power-up con un estado y una forma rectangular.
-- **Bola**: Una forma circular que representa la bola.
-- **Paleta**: Una forma rectangular que representa la paleta.
-- **Variables de Estado**: Varias variables para rastrear el estado del juego, incluidos bloques activos, velocidad de la bola, detección de colisiones y estado del juego.
+- **Estructura de paredes**: Representa los limites del mapa.
+- **Comida**: Representa el alimento para snake y el sumador del score.
+- **Serpiente**: Es el elemento movible sobre el mapa.
+- **Mapa**: Escenario generado para desarrollo del juego.
 
 ### Inicialización
 
 - **Ventana**: Crea una ventana de juego con dimensiones específicas y un límite de fotogramas.
-- **Formas**: Inicializa las formas de la bola, la paleta, los bloques y la pastilla con posiciones y colores.
+- **Formas**: Inicializa las formas del snake , la comida, las paredes y el mapa.
 - **Fuentes y Sonidos**: Carga las fuentes y archivos de sonido necesarios.
 
 ### Bucle del Juego
 
 - **Manejo de Eventos**: Captura y maneja los eventos de la ventana.
-- **Lógica del Juego**: Actualiza el estado del juego, incluyendo el movimiento de la bola, la detección de colisiones y el control de la paleta.
+- **Lógica del Juego**: Actualiza el estado del juego, incluyendo el movimiento del snake, la detección de colisiones y el control del score.
 - **Renderizado**: Limpia la ventana, dibuja los elementos del juego y muestra el fotograma actualizado.
 
 ## Activos
 
-- **Fuentes**: Asegúrate de que `Fonts/ARCADE.TTF` esté en el directorio correcto.
-- **Sonidos**: Asegúrate de que los archivos de sonido `ReboteParedes.wav`, `RebotePaleta.wav` y `ReboteLadrillo.wav` estén en el directorio correcto.
+- **Fuentes**: Asegúrate de que `./assets/fonts/Minecraft.ttf` esté en el directorio correcto.
+- **Sonidos**: Asegúrate de que los archivos de sonido `ReboteParedes.wav` estén en el directorio correcto.
 
 ## Creado por:
 
-Luis angel velazquez bravo reg: 23110166
+Luis Eduardo Rodriguez Garcia 
+Registro: 23110167
 
 ## Agradecimientos
 
-Este proyecto fue inspirado por el clásico juego Arkanoid. Un agradecimiento especial a la comunidad de SFML por proporcionar una robusta biblioteca multimedia.
+Este proyecto fue inspirado por el clásico juego Snake Un agradecimiento especial a la comunidad de SFML por proporcionar una robusta biblioteca multimedia.
 
 ## Licencia
 

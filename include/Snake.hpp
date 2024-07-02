@@ -3,12 +3,9 @@
 #include <Food.hpp>
 #include <Score.hpp>
 
-
 class Snake
 {
 public:
-
-
     Snake(sf::Vector2f position, sf::Color color)
     {
         shape.setSize(sf::Vector2f(20, 20));
@@ -23,7 +20,6 @@ public:
         }
         this->sprite = sf::Sprite(texture);
         this->sprite.setPosition(position); // Posición inicial sprite
-                                            
     }
     void moveL(float offsetX, float offsetY)
     {
@@ -58,12 +54,12 @@ public:
     {
         sprite.setTextureRect(sf::IntRect(1, 1, 45, 35));
     }
-    
-    bool DetectarColision(sf::FloatRect colision){
+
+    bool DetectarColision(sf::FloatRect colision)
+    {
         return sprite.getGlobalBounds().intersects(colision);
         score.Contar();
     }
-
 
 private:
     sf::RectangleShape shape;
@@ -71,5 +67,4 @@ private:
     sf::Texture texture;
     sf::Clock clock;
     Contador score;
-    
 };

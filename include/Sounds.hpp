@@ -5,22 +5,17 @@
 class Sounds
 {
 public:
- sf::SoundBuffer buffer;
- sf::Sound sound;
+    sf::SoundBuffer buffer;
+    sf::Sound sound;
 
 public:
     Sounds()
     {
-         if (!buffer.loadFromFile("./assets/music/eat.ogg"))
-    {
-        std::cerr << "Error al cargar el archivo de sonido" << std::endl;
-       
-    }
+        if (!buffer.loadFromFile("./assets/music/eat.ogg"))
+        {
+            std::cerr << "Error al cargar el archivo de sonido" << std::endl;
+        }
 
-     sound.setBuffer(buffer);
-     
+        sound.setBuffer(buffer);
     };
-
-  
 };
-
